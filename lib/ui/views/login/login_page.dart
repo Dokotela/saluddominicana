@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../../controllers/controllers.dart';
 import '../../../routes/routes.dart';
@@ -15,6 +14,7 @@ class LoginPage extends StatelessWidget {
     final AppLocalizations_Labels labels = AppLocalizations.of(context)!;
     final _userName = TextEditingController();
     final _password = TextEditingController();
+    final controller = Get.put(FirebaseLogin())!;
 
     /// ToDo: make this ok if null
     final screenSize = Get.put(ResponsiveCommand())!;
@@ -104,7 +104,10 @@ class LoginPage extends StatelessWidget {
 
                 ActionButton(
                   buttonText: labels.auth.login,
-                  onPressed: () => Get.toNamed(AppRoutes.HOME),
+                  onPressed: () {
+                    controller.emailLogin();
+                    // Get.toNamed(AppRoutes.HOME);
+                  },
                 ),
               ],
             ),
