@@ -105,7 +105,8 @@ class LoginPage extends StatelessWidget {
                 ActionButton(
                   buttonText: labels.auth.login,
                   onPressed: () {
-                    controller.emailLogin();
+                    // controller.emailLogin();
+                    controller.googleLogin();
                     // Get.toNamed(AppRoutes.HOME);
                   },
                 ),
