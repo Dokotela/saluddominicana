@@ -14,10 +14,10 @@ class LoginPage extends StatelessWidget {
     final AppLocalizations_Labels labels = AppLocalizations.of(context)!;
     final _userName = TextEditingController();
     final _password = TextEditingController();
-    final controller = Get.put(FirebaseLogin())!;
+    final _loginCommand = Get.put(LoginCommand());
 
     /// ToDo: make this ok if null
-    final screenSize = Get.put(ResponsiveCommand())!;
+    final screenSize = Get.put(ResponsiveCommand());
     SizedBox _sizedBox(double size) =>
         SizedBox(height: screenSize.height * size);
 
@@ -53,23 +53,18 @@ class LoginPage extends StatelessWidget {
                 Container(
                   width: screenSize.width * .7,
                   child: TextField(
-                    style: Get.theme!.textTheme.headline6!
+                    style: Get.theme.textTheme.headline6!
                         .copyWith(fontSize: screenSize.width * .05),
                     obscureText: false,
                     controller: _userName,
                     decoration: InputDecoration(
                       labelText: labels.auth.userName,
-                      labelStyle: Get.theme!.textTheme.headline6!
+                      labelStyle: Get.theme.textTheme.headline6!
                           .copyWith(fontSize: screenSize.width * .05),
                       prefixIcon: Icon(
                         Icons.person,
                         size: screenSize.width * .05,
                       ),
-                      // contentPadding:
-                      //     screenSize.symmetricPadding(sizingInformation),
-                      // border: OutlineInputBorder(
-                      //     borderRadius: screenSize
-                      //         .circularBorderRadius(sizingInformation)),
                     ),
                   ),
                 ),
@@ -79,23 +74,18 @@ class LoginPage extends StatelessWidget {
                 Container(
                   width: screenSize.width * .7,
                   child: TextField(
-                    style: Get.theme!.textTheme.headline6!
+                    style: Get.theme.textTheme.headline6!
                         .copyWith(fontSize: screenSize.width * .05),
                     obscureText: true,
                     controller: _password,
                     decoration: InputDecoration(
                       labelText: labels.auth.password,
-                      labelStyle: Get.theme!.textTheme.headline6!
+                      labelStyle: Get.theme.textTheme.headline6!
                           .copyWith(fontSize: screenSize.width * .05),
                       prefixIcon: Icon(
                         Icons.lock,
                         size: screenSize.width * .05,
                       ),
-                      // contentPadding:
-                      //     screenSize.symmetricPadding(sizingInformation),
-                      // border: OutlineInputBorder(
-                      //     borderRadius: screenSize
-                      //         .circularBorderRadius(sizingInformation)),
                     ),
                   ),
                 ),
@@ -104,10 +94,12 @@ class LoginPage extends StatelessWidget {
 
                 ActionButton(
                   buttonText: labels.auth.login,
-                  onPressed: () {
+                  onPressed: () async {
                     // controller.emailLogin();
-                    controller.googleLogin();
-                    // Get.toNamed(AppRoutes.HOME);
+                    final loggedIn = await _loginCommand.login();
+                    if (loggedIn) {
+                      Get.toNamed(AppRoutes.HOME);
+                    }
                   },
                 ),
               ],

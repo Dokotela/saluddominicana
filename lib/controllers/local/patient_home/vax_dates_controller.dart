@@ -24,8 +24,8 @@ class VaxDatesController extends GetxController {
   }
 
   /// GETTER FUNCTIONS
-  String get text => _text.value!;
-  String get dz => _dz.value!;
+  String get text => _text.value;
+  String get dz => _dz.value;
   String dateString(int index) =>
       dateFromFhirDateTime(immList[index].occurrenceDateTime!);
   DateTime currentDate(int index) =>
@@ -40,7 +40,7 @@ class VaxDatesController extends GetxController {
   /// EVENTS
   Future addNew() async {
     await controller.addNew(
-        drVaxCvxMap[_dz.value!]!, FhirDateTime(DateTime.now()));
+        drVaxCvxMap[_dz.value]!, FhirDateTime(DateTime.now()));
     updateImmList();
   }
 

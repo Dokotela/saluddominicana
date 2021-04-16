@@ -19,7 +19,7 @@ class ThemeCommand extends GetxController {
   ThemeMode? _themeMode;
 
   ThemeMode get themeMode => _themeMode ?? ThemeMode.light;
-  String get currentTheme => themeString.value!;
+  String get currentTheme => themeString.value;
 
   @override
   Future<void> onReady() async {

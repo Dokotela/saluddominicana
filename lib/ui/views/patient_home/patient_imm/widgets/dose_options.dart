@@ -8,7 +8,7 @@ import 'package:saluddominicana/controllers/controllers.dart';
 
 Widget doseOptions(
     Either<DoseDisplay, String> display, SizingInformation sizingInformation) {
-  final screenSize = Get.put(ResponsiveCommand())!;
+  final screenSize = Get.put(ResponsiveCommand());
 
   return display.fold(
     (l) {

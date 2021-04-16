@@ -12,7 +12,7 @@ import '../widgets/names.dart';
 class NewPatientPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NewPatientController())!;
+    final controller = Get.put(NewPatientController());
     final labels = AppLocalizations.of(context)!;
 
     return GestureDetector(
@@ -77,7 +77,7 @@ class NewPatientPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Contacto Primario',
-                                style: Get.theme!.textTheme.bodyText1!
+                                style: Get.theme.textTheme.bodyText1!
                                     .copyWith(fontSize: Get.width * .05),
                               ),
                               IconButton(
@@ -89,7 +89,7 @@ class NewPatientPage extends StatelessWidget {
                             width: Get.width * .7,
                             child: Text(
                               controller.primaryFamilyMember,
-                              style: Get.theme!.textTheme.bodyText1!
+                              style: Get.theme.textTheme.bodyText1!
                                   .copyWith(fontSize: Get.width * .05),
                             ),
                           ),

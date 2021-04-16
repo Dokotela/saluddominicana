@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -13,14 +12,12 @@ import 'ui/views/views.dart';
 /// sources mostly from https://github.com/FireJuun/prapare/blob/main/lib/main.dart
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   await _initServices();
   runApp(MyApp());
 }
 
 // Theme uses GetxService so that it isn't closed during app lifecycle
 Future<void> _initServices() async {
-  Get.put(FirebaseLogin());
   await GetStorage.init();
   Get.put<StorageCommand>(StorageCommand());
   StorageCommand.to.getFirstLoadInfoFromStore();

@@ -65,7 +65,7 @@ class ContactsPage extends StatelessWidget {
               child: Text(
                 labels.actions.cancel,
                 style: TextStyle(
-                    color: Get.theme!.colorScheme.onPrimary,
+                    color: Get.theme.colorScheme.onPrimary,
                     fontSize: Get.width * .05),
               ),
               onPressed: () => Get.back(),
@@ -74,7 +74,7 @@ class ContactsPage extends StatelessWidget {
               child: Text(
                 labels.actions.add,
                 style: TextStyle(
-                    color: Get.theme!.colorScheme.onPrimary,
+                    color: Get.theme.colorScheme.onPrimary,
                     fontSize: Get.width * .05),
               ),
               onPressed: () async => controller.addNewContact(),
@@ -99,7 +99,7 @@ class ContactsPage extends StatelessWidget {
               icon: Icon(Icons.add_box_outlined),
               iconSize: Get.width * .06,
               onPressed: () async => await Get.dialog(addNew()),
-              color: Get.theme!.colorScheme.onPrimary,
+              color: Get.theme.colorScheme.onPrimary,
             ),
           ],
         ),
@@ -113,13 +113,13 @@ class ContactsPage extends StatelessWidget {
                   () => controller.currentListLength == 0
                       ? Text(
                           labels.contacts.noContactsAdded,
-                          style: Get.theme!.textTheme.headline6!
+                          style: Get.theme.textTheme.headline6!
                               .copyWith(fontSize: Get.width * .06),
                         )
                       : OrderedListPickOne(
                           label1: labels.name.title,
                           sortCol1: controller.sortByName,
-                          order1: viewController!.getOrder(controller.nameSort),
+                          order1: viewController.getOrder(controller.nameSort),
                           entry1: controller.contactName,
                           label2: labels.relationships.title,
                           sortCol2: controller.sortByRelation,

@@ -41,7 +41,7 @@ class OrderedList extends StatelessWidget {
     Expanded _text(String? text) => Expanded(
           child: Text(
             text ?? '',
-            style: Get.theme!.textTheme.headline6!
+            style: Get.theme.textTheme.headline6!
                 .copyWith(fontSize: Get.width * .04),
             // overflow: TextOverflow.,
             // softWrap: false,
@@ -94,7 +94,7 @@ class OrderedList extends StatelessWidget {
               itemCount: listLength,
               separatorBuilder: (context, index) => Divider(
                 thickness: 1.0,
-                color: Get.theme!.colorScheme.onPrimary,
+                color: Get.theme.colorScheme.onPrimary,
               ),
               itemBuilder: (context, index) => TextButton(
                 onPressed: () =>

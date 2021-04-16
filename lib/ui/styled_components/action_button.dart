@@ -16,7 +16,7 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = Get.put(ResponsiveCommand())!;
+    final screenSize = Get.put(ResponsiveCommand());
 
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => ButtonTheme(
@@ -24,14 +24,14 @@ class ActionButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             buttonText,
-            style: Get.theme!.textTheme.headline6!.copyWith(
-                color: Get.theme!.colorScheme.onPrimary,
+            style: Get.theme.textTheme.headline6!.copyWith(
+                color: Get.theme.colorScheme.onPrimary,
                 fontSize: screenSize.width * .05),
           ),
           style: ElevatedButton.styleFrom(
             minimumSize: Size(sizingInformation.screenSize.width * .7, 1),
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Get.theme!.colorScheme.onPrimary),
+              side: BorderSide(color: Get.theme.colorScheme.onPrimary),
               borderRadius: screenSize.circularBorderRadius(sizingInformation),
             ),
             padding: screenSize.symmetricPadding(sizingInformation),

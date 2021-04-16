@@ -49,10 +49,10 @@ class VaxDatesPage extends StatelessWidget {
                               Material(
                                 elevation: 5.0,
                                 borderRadius: BorderRadius.circular(64.0),
-                                color: Get.theme!.colorScheme.primary,
+                                color: Get.theme.colorScheme.primary,
                                 child: IconButton(
                                   icon: Icon(Icons.edit,
-                                      color: Get.theme!.colorScheme.onPrimary),
+                                      color: Get.theme.colorScheme.onPrimary),
                                   onPressed: () => showMyDatePicker(
                                       initialDate:
                                           controller.currentDate(index),
@@ -63,10 +63,10 @@ class VaxDatesPage extends StatelessWidget {
                               Material(
                                 elevation: 5.0,
                                 borderRadius: BorderRadius.circular(64.0),
-                                color: Get.theme!.colorScheme.primary,
+                                color: Get.theme.colorScheme.primary,
                                 child: IconButton(
                                   icon: Icon(Icons.delete,
-                                      color: Get.theme!.colorScheme.onPrimary),
+                                      color: Get.theme.colorScheme.onPrimary),
                                   onPressed: () => Get.dialog(delete(index)),
                                 ),
                               ),
@@ -91,14 +91,14 @@ class VaxDatesPage extends StatelessWidget {
           TextButton(
             child: Text(
               labels.actions.cancel,
-              style: TextStyle(color: Get.theme!.colorScheme.onPrimary),
+              style: TextStyle(color: Get.theme.colorScheme.onPrimary),
             ),
             onPressed: () => Get.back(),
           ),
           TextButton(
             child: Text(
               labels.actions.delete,
-              style: TextStyle(color: Get.theme!.colorScheme.onPrimary),
+              style: TextStyle(color: Get.theme.colorScheme.onPrimary),
             ),
             onPressed: () async => await controller.delete(index),
           ),

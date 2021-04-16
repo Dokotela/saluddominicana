@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:saluddominicana/controllers/controllers.dart';
+import 'package:saluddominicana/services/fhir_server.dart';
 
 import '../../../routes/routes.dart';
 import '../../../ui/styled_components/app_bar.dart';
@@ -36,6 +38,13 @@ class HomePage extends StatelessWidget {
               ActionButton(
                 buttonText: labels.pages.summaryReport,
                 onPressed: () => null,
+              ),
+              ActionButton(
+                buttonText: 'Sync All',
+                onPressed: () async {
+                  final server = FhirServer();
+                  await server.uploadAllResources();
+                },
               ),
             ],
           ),

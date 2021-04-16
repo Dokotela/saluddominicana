@@ -31,7 +31,7 @@ class BirthDateWidget extends StatelessWidget {
               width: Get.width * 0.4,
               child: Text(
                 '${labels.dateOfBirth.title}',
-                style: Get.theme!.textTheme.bodyText1!
+                style: Get.theme.textTheme.bodyText1!
                     .copyWith(fontSize: Get.width * .05),
               ),
             ),
@@ -53,9 +53,9 @@ class BirthDateWidget extends StatelessWidget {
                   children: [
                     birthDate == DateTime(1900, 1, 1)
                         ? Text('             ',
-                            style: Get.theme!.textTheme.bodyText1)
+                            style: Get.theme.textTheme.bodyText1)
                         : Text(displayBirthDate,
-                            style: Get.theme!.textTheme.bodyText1),
+                            style: Get.theme.textTheme.bodyText1),
                     Icon(Icons.keyboard_arrow_down),
                   ],
                 ),
@@ -65,8 +65,8 @@ class BirthDateWidget extends StatelessWidget {
         ),
         Text(
           dispBirthDateError.tr,
-          style: Get.theme!.textTheme.caption!
-              .copyWith(color: Get.theme!.colorScheme.error),
+          style: Get.theme.textTheme.caption!
+              .copyWith(color: Get.theme.colorScheme.error),
         ),
       ],
     );

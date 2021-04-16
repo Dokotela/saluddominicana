@@ -8,14 +8,14 @@ class AddNew extends FloatingActionButton {
       : super.extended(
           label: Text(
             _labels.actions.addNew,
-            style: TextStyle(color: Get.theme!.colorScheme.primary),
+            style: TextStyle(color: Get.theme.colorScheme.primary),
           ),
           elevation: 10.0,
-          backgroundColor: Get.theme!.colorScheme.onPrimary,
+          backgroundColor: Get.theme.colorScheme.onPrimary,
           onPressed: addNew,
           icon: Icon(
             Icons.add,
-            color: Get.theme!.colorScheme.primary,
+            color: Get.theme.colorScheme.primary,
           ),
         );
 

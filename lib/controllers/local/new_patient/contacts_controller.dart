@@ -31,22 +31,22 @@ class ContactsController extends GetxController {
   final _barrioError = ''.obs;
 
   // GETTERS
-  int get currentListLength => _controller!.contacts.length;
+  int get currentListLength => _controller.contacts.length;
 
   int get nameSort => _nameSort.value;
   int get relationSort => _relationSort.value;
   int get barrioSort => _barrioSort.value;
 
   String contactName(int index) =>
-      lastCommaGivenName([_controller!.contacts[index].name ?? HumanName()]);
+      lastCommaGivenName([_controller.contacts[index].name ?? HumanName()]);
 
   String contactRelation(int index) {
-    if (_controller!.contacts.isEmpty) {
+    if (_controller.contacts.isEmpty) {
       return labels.relationships.title;
-    } else if (_controller!.contacts[index].relationship == null) {
+    } else if (_controller.contacts[index].relationship == null) {
       return labels.relationships.title;
     }
-    for (var relationship in _controller!.contacts[index].relationship!) {
+    for (var relationship in _controller.contacts[index].relationship!) {
       if (relationship.coding != null) {
         for (var relation in relationship.coding!) {
           if (relationshipTypes().contains(relationshipStringToLabel(
@@ -62,19 +62,19 @@ class ContactsController extends GetxController {
     return labels.relationships.title;
   }
 
-  String contactBarrio(int index) => _controller!.contacts.isEmpty
+  String contactBarrio(int index) => _controller.contacts.isEmpty
       ? labels.address.neighborhood.title
-      : _controller!.contacts[index].address?.district ??
+      : _controller.contacts[index].address?.district ??
           labels.address.neighborhood.title;
 
-  String get familyNameError => _familyNameError.value ?? '';
-  String get givenNameError => _givenNameError.value ?? '';
+  String get familyNameError => _familyNameError.value;
+  String get givenNameError => _givenNameError.value;
 
-  String get relation => _relation.value ?? '';
-  String get relationError => _relationError.value ?? '';
+  String get relation => _relation.value;
+  String get relationError => _relationError.value;
 
-  String get barrio => _barrio.value ?? '';
-  String get barrioError => _barrioError.value ?? '';
+  String get barrio => _barrio.value;
+  String get barrioError => _barrioError.value;
 
   // SETTERS
   void setupForNewContact() {
@@ -95,11 +95,11 @@ class ContactsController extends GetxController {
 
     if (_nameSort.value == 1) {
       _nameSort.value = 2;
-      var tempContacts = _controller!.contacts;
+      var tempContacts = _controller.contacts;
       tempContacts.sort((a, b) => _sortName(b, a));
     } else {
       _nameSort.value = 1;
-      var tempContacts = _controller!.contacts;
+      var tempContacts = _controller.contacts;
       tempContacts.sort((a, b) => _sortName(a, b));
     }
   }
@@ -114,10 +114,10 @@ class ContactsController extends GetxController {
     _barrioSort.value = 0;
     if (_relationSort.value == 1) {
       _relationSort.value = 2;
-      _controller!.contacts.sort((a, b) => _sortRelation(b, a));
+      _controller.contacts.sort((a, b) => _sortRelation(b, a));
     } else {
       _relationSort.value = 1;
-      _controller!.contacts.sort((a, b) => _sortRelation(a, b));
+      _controller.contacts.sort((a, b) => _sortRelation(a, b));
     }
   }
 
@@ -152,10 +152,10 @@ class ContactsController extends GetxController {
     _relationSort.value = 0;
     if (_barrioSort.value == 1) {
       _barrioSort.value = 2;
-      _controller!.contacts.sort((a, b) => _sortBarrio(b, a));
+      _controller.contacts.sort((a, b) => _sortBarrio(b, a));
     } else {
       _barrioSort.value = 1;
-      _controller!.contacts.sort((a, b) => _sortBarrio(a, b));
+      _controller.contacts.sort((a, b) => _sortBarrio(a, b));
     }
   }
 
@@ -166,12 +166,12 @@ class ContactsController extends GetxController {
     var contact = formatPatientContact(
       familyName.text,
       givenName.text,
-      _barrio.value ?? '',
-      _relation.value ?? '',
+      _barrio.value,
+      _relation.value,
     );
-    _controller!.addContact(contact);
+    _controller.addContact(contact);
     Get.back();
   }
 
-  void choosePrimary(int index) => _controller!.choosePrimary(index);
+  void choosePrimary(int index) => _controller.choosePrimary(index);
 }

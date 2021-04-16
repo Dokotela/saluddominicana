@@ -152,13 +152,13 @@ class AppLocalizations {
     ),
     Locale.fromSubtags(languageCode: 'es'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
-        add: 'Agregar',
+        add: 'Añadir',
         back: 'atrás',
         cancel: 'Cancelar',
-        delete: 'Borrar',
+        delete: 'Eliminar',
         home: 'Hogar',
         logout: 'Cerrar sesión',
-        ok: 'OK',
+        ok: 'Okay',
         save: 'Salvar',
         search: 'Buscar',
         submit: 'Enviar',
@@ -171,7 +171,7 @@ class AppLocalizations {
         ),
       ),
       age: AppLocalizations_Labels_Age(
-        title: 'Edad',
+        title: 'Años',
       ),
       app: AppLocalizations_Labels_App(
         chooseLanguage: 'Elige lengua',
@@ -184,7 +184,7 @@ class AppLocalizations {
         ),
       ),
       auth: AppLocalizations_Labels_Auth(
-        login: 'Acceso',
+        login: 'Iniciar sesión',
         password: 'Contraseña',
         userName: 'Nombre de usuario',
       ),
@@ -201,7 +201,7 @@ class AppLocalizations {
       ),
       gender: AppLocalizations_Labels_Gender(
         error: 'Por favor seleccione el género',
-        female: 'Mujer',
+        female: 'Hembra',
         male: 'Masculino',
         title: 'Sexo del nacimiento',
       ),
@@ -209,8 +209,8 @@ class AppLocalizations {
         completeError: 'Por favor completa todos los campos requeridos.',
       ),
       language: AppLocalizations_Labels_Language(
-        inEnglish: 'inglés',
-        title: 'inglés',
+        inEnglish: 'Inglés',
+        title: 'Inglés',
       ),
       medical: AppLocalizations_Labels_Medical(
         deworming: 'desparasitación',
@@ -235,7 +235,7 @@ class AppLocalizations {
       name: AppLocalizations_Labels_Name(
         familyName: 'Familia / Apellido',
         familyNameError: 'Introduce el nombre de la familia',
-        firstName: 'Nombre de pila',
+        firstName: 'Primer nombre',
         givenNameError: 'Introduzca nombres dados',
         givenNames: 'First / Nombre de pila',
         lastName: 'Apellido',
@@ -245,7 +245,7 @@ class AppLocalizations {
       pages: AppLocalizations_Labels_Pages(
         allPatients: 'Todo Pacientes',
         contacts: 'Contactos',
-        login: 'Acceso',
+        login: 'Iniciar sesión',
         newPatient: 'Paciente nuevo',
         patientHome: 'Inicio del paciente',
         patientInformation: 'Información del paciente',
@@ -283,21 +283,21 @@ class AppLocalizations {
         light: 'Ligero',
         system: 'Sistema',
         theme: 'Tema',
-        title: 'Ajustes',
+        title: 'ajustes',
       ),
     ),
     Locale.fromSubtags(languageCode: 'ar'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
-        add: 'يضيف',
-        back: 'خلف',
-        cancel: 'يلغي',
+        add: 'إضافة',
+        back: 'عودة',
+        cancel: 'إلغاء',
         delete: 'حذف',
         home: 'الصفحة الرئيسية',
         logout: 'تسجيل خروج',
         ok: 'موافق',
-        save: 'يحفظ',
+        save: 'حفظ',
         search: 'بحث',
-        submit: 'يقدم',
+        submit: 'إرسال',
         addNew: 'اضف جديد',
       ),
       address: AppLocalizations_Labels_Address(
@@ -313,7 +313,7 @@ class AppLocalizations {
         chooseLanguage: 'اختيار اللغة',
         chooseTheme: 'اختيار موضوع',
         settings: 'إعدادات التطبيقات',
-        system: 'نظام',
+        system: 'النظام',
         title: AppLocalizations_Labels_App_Title(
           saluddominicana: 'السعود الدومينيكان',
           title: 'قوة',
@@ -321,7 +321,7 @@ class AppLocalizations {
       ),
       auth: AppLocalizations_Labels_Auth(
         login: 'تسجيل الدخول',
-        password: 'كلمة المرور',
+        password: 'كلمه السر',
         userName: 'اسم المستخدم',
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
@@ -330,7 +330,7 @@ class AppLocalizations {
       ),
       contacts: AppLocalizations_Labels_Contacts(
         newContact: 'جهة اتصال جديدة',
-        noContactsAdded: 'لم يتم إضافة أي اتصالات.',
+        noContactsAdded: 'تم إضافة أي اتصالات.',
       ),
       dateOfBirth: AppLocalizations_Labels_DateOfBirth(
         title: 'تاريخ الولادة',
@@ -338,7 +338,7 @@ class AppLocalizations {
       gender: AppLocalizations_Labels_Gender(
         error: 'يرجى تحديد الجنس',
         female: 'أنثى',
-        male: 'ذكر',
+        male: 'الذكر',
         title: 'الجنس عند الولادة',
       ),
       general: AppLocalizations_Labels_General(
@@ -354,18 +354,18 @@ class AppLocalizations {
         immunization: 'تحصين',
         immunizations: 'التطعيمات',
         summaryReport: 'تقرير ملخص',
-        vaccine: 'مصل',
+        vaccine: 'لقاح',
         vaccines: AppLocalizations_Labels_Medical_Vaccines(
           addDate: 'إضافة التاريخ من لقاح:',
           certify: 'انقر للمصادقة على مواعيد',
           dateGiven: 'تاريخ نظرا',
           delete: 'التحصين حذف',
-          none: 'لا اللقاحات السابقة من هذا نوع معين',
-          noPrevious: 'لا اللقاحات السابقة من هذا نوع معين',
+          none: 'أي لقاحات السابقة من هذا نوع معين',
+          noPrevious: 'أي لقاحات السابقة من هذا نوع معين',
           sureDelete: 'هل أنت متأكد أنك تريد حذف هذا التطعيم؟',
           title: 'اللقاحات',
-          due: 'حق',
-          completed: 'مكتمل',
+          due: 'بسبب',
+          completed: 'منجز',
         ),
       ),
       name: AppLocalizations_Labels_Name(
@@ -388,7 +388,7 @@ class AppLocalizations {
         summaryReport: 'تقرير ملخص',
       ),
       patient: AppLocalizations_Labels_Patient(
-        title: 'مريض',
+        title: 'صبور',
       ),
       registration: AppLocalizations_Labels_Registration(
         completed: 'حفظ المريض بنجاح. الرجاء إدخال اتصالاتهم.',
@@ -396,29 +396,29 @@ class AppLocalizations {
       ),
       relationships: AppLocalizations_Labels_Relationships(
         aunt: 'عمة',
-        brother: 'أخ',
-        daughter: 'بنت',
+        brother: 'شقيق',
+        daughter: 'ابنة',
         error: 'الرجاء تحديد العلاقة',
-        father: 'أب',
+        father: 'الآب',
         grandfather: 'جد',
         grandmother: 'جدة',
-        mother: 'الأم',
-        nephew: 'ابن الأخ',
-        niece: 'ابنة الأخت',
+        mother: 'أم',
+        nephew: 'ابن شقيق',
+        niece: 'ابنة الاخ',
         other: 'آخر',
         relation: 'علاقة',
         sister: 'أخت',
         son: 'ابن',
-        title: 'علاقة',
+        title: 'صلة',
         uncle: 'اخو الام',
       ),
       settings: AppLocalizations_Labels_Settings(
         dark: 'داكن',
         language: 'لغة',
-        light: 'خفيفة',
-        system: 'نظام',
-        theme: 'سمة',
-        title: 'إعدادات',
+        light: 'ضوء',
+        system: 'النظام',
+        theme: 'موضوع',
+        title: 'الإعدادات',
       ),
     ),
     Locale.fromSubtags(languageCode: 'hi'): AppLocalizations_Labels(
@@ -429,7 +429,7 @@ class AppLocalizations {
         delete: 'हटाएं',
         home: 'घर',
         logout: 'लॉग आउट',
-        ok: 'ठीक है',
+        ok: 'ठीक',
         save: 'सहेजें',
         search: 'खोज',
         submit: 'प्रस्तुत',
@@ -438,11 +438,11 @@ class AppLocalizations {
       address: AppLocalizations_Labels_Address(
         neighborhood: AppLocalizations_Labels_Address_Neighborhood(
           error: 'कृपया पड़ोस का चयन',
-          title: 'आस - पड़ोस',
+          title: 'अड़ोस - पड़ोस',
         ),
       ),
       age: AppLocalizations_Labels_Age(
-        title: 'उम्र',
+        title: 'आयु',
       ),
       app: AppLocalizations_Labels_App(
         chooseLanguage: 'भाषा चुनें',
@@ -461,7 +461,7 @@ class AppLocalizations {
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
         error: 'जन्मतिथि दर्ज करें',
-        title: 'जन्म तिथि',
+        title: 'जन्म दिन',
       ),
       contacts: AppLocalizations_Labels_Contacts(
         newContact: 'नया कॉन्ट्रैक्ट',
@@ -473,7 +473,7 @@ class AppLocalizations {
       gender: AppLocalizations_Labels_Gender(
         error: 'कृपया लिंग चुनें',
         female: 'महिला',
-        male: 'पुरुष',
+        male: 'नर',
         title: 'जन्म के समय लिंग',
       ),
       general: AppLocalizations_Labels_General(
@@ -506,11 +506,11 @@ class AppLocalizations {
       name: AppLocalizations_Labels_Name(
         familyName: 'पारिवारिक / अंतिम नाम',
         familyNameError: 'परिवार का नाम दर्ज करें',
-        firstName: 'नाम',
+        firstName: 'पहला नाम',
         givenNameError: 'दिए गए नाम दर्ज करें',
         givenNames: 'प्रथम / दिए गए नाम',
         lastName: 'उपनाम',
-        otherNames: 'और नाम',
+        otherNames: 'अन्य नामों',
         title: 'नाम',
       ),
       pages: AppLocalizations_Labels_Pages(
@@ -534,7 +534,7 @@ class AppLocalizations {
         brother: 'भइया',
         daughter: 'बेटी',
         error: 'कृपया संबंध का चयन',
-        father: 'पिता',
+        father: 'पिता जी',
         grandfather: 'दादा',
         grandmother: 'दादी मा',
         mother: 'मां',
@@ -558,22 +558,22 @@ class AppLocalizations {
     ),
     Locale.fromSubtags(languageCode: 'ru'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
-        add: 'Добавлять',
-        back: 'Назад',
+        add: 'Добавить',
+        back: 'назад',
         cancel: 'Отмена',
         delete: 'Удалить',
-        home: 'Дома',
+        home: 'Главная',
         logout: 'Выйти',
-        ok: 'Ok',
-        save: 'Сохранять',
+        ok: 'ОК',
+        save: 'Сохранить',
         search: 'Поиск',
-        submit: 'Представлять на рассмотрение',
+        submit: 'Разместить',
         addNew: 'Добавить новое',
       ),
       address: AppLocalizations_Labels_Address(
         neighborhood: AppLocalizations_Labels_Address_Neighborhood(
           error: 'Выберите район',
-          title: 'Район',
+          title: 'окрестности',
         ),
       ),
       age: AppLocalizations_Labels_Age(
@@ -583,7 +583,7 @@ class AppLocalizations {
         chooseLanguage: 'Выберите язык',
         chooseTheme: 'Выбрать тему',
         settings: 'Настройки приложения',
-        system: 'Система',
+        system: 'система',
         title: AppLocalizations_Labels_App_Title(
           saluddominicana: 'Салюд Доминикане',
           title: 'сила',
@@ -591,8 +591,8 @@ class AppLocalizations {
       ),
       auth: AppLocalizations_Labels_Auth(
         login: 'Авторизоваться',
-        password: 'Пароль',
-        userName: 'Имя пользователя',
+        password: 'пароль',
+        userName: 'имя пользователя',
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
         error: 'Пожалуйста, введите дату рождения',
@@ -608,7 +608,7 @@ class AppLocalizations {
       gender: AppLocalizations_Labels_Gender(
         error: 'Пожалуйста, выберите пол',
         female: 'женский',
-        male: 'Мужской',
+        male: 'мужчина',
         title: 'Пол при рождении',
       ),
       general: AppLocalizations_Labels_General(
@@ -620,7 +620,7 @@ class AppLocalizations {
       ),
       medical: AppLocalizations_Labels_Medical(
         deworming: 'дегельминтация',
-        growth: 'Рост',
+        growth: 'рост',
         immunization: 'иммунизация',
         immunizations: 'Иммунизация',
         summaryReport: 'Сводный отчет',
@@ -634,7 +634,7 @@ class AppLocalizations {
           noPrevious: 'Нет предыдущих вакцин этого типа данные',
           sureDelete: 'Вы уверены, что хотите удалить эту иммунизацию?',
           title: 'Вакцина',
-          due: 'Должный',
+          due: 'В связи',
           completed: 'Завершенный',
         ),
       ),
@@ -646,7 +646,7 @@ class AppLocalizations {
         givenNames: 'Первый / Указанные имена',
         lastName: 'Фамилия',
         otherNames: 'Другие имена',
-        title: 'Имя',
+        title: 'имя',
       ),
       pages: AppLocalizations_Labels_Pages(
         allPatients: 'Все пациенты',
@@ -658,7 +658,7 @@ class AppLocalizations {
         summaryReport: 'Сводный отчет',
       ),
       patient: AppLocalizations_Labels_Patient(
-        title: 'Пациент',
+        title: 'Терпеливый',
       ),
       registration: AppLocalizations_Labels_Registration(
         completed:
@@ -666,30 +666,30 @@ class AppLocalizations {
         toPatientHomepage: 'Продолжить терпеливые Домашнюю страницу',
       ),
       relationships: AppLocalizations_Labels_Relationships(
-        aunt: 'Тетя',
+        aunt: 'тетка',
         brother: 'Брат',
         daughter: 'Дочь',
         error: 'Пожалуйста, выберите отношения',
         father: 'Отец',
         grandfather: 'Дедушка',
         grandmother: 'Бабушка',
-        mother: 'Мать',
+        mother: 'Мама',
         nephew: 'Племянник',
         niece: 'Племянница',
         other: 'Другой',
         relation: 'Связь',
         sister: 'Сестра',
         son: 'Сын',
-        title: 'Отношение',
+        title: 'отношения',
         uncle: 'Дядя',
       ),
       settings: AppLocalizations_Labels_Settings(
         dark: 'Тьма',
-        language: 'Язык',
+        language: 'язык',
         light: 'Свет',
-        system: 'Система',
-        theme: 'Тема',
-        title: 'Настройки',
+        system: 'система',
+        theme: 'тема',
+        title: 'настройки',
       ),
     ),
     Locale.fromSubtags(languageCode: 'bn'): AppLocalizations_Labels(
@@ -836,7 +836,7 @@ class AppLocalizations {
         delete: 'Delete',
         home: 'နေအိမ်',
         logout: 'logout',
-        ok: 'အဆင်ပြေလား',
+        ok: 'ရလား',
         save: 'ကြော်ငြာကို Save လုပ်ရန်',
         search: 'ရှာဖှေ',
         submit: 'Submit',
@@ -875,7 +875,7 @@ class AppLocalizations {
         noContactsAdded: 'အဘယ်သူမျှမအဆက်အသွယ်ထည့်ပြီးပါပြီ။',
       ),
       dateOfBirth: AppLocalizations_Labels_DateOfBirth(
-        title: 'မွေးနေ့',
+        title: 'မွေးရက်',
       ),
       gender: AppLocalizations_Labels_Gender(
         error: 'ကျားမကို select ပေးပါ',
@@ -966,14 +966,14 @@ class AppLocalizations {
     ),
     Locale.fromSubtags(languageCode: 'zh_CN'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
-        add: '添加',
-        back: '后退',
+        add: '加',
+        back: '背部',
         cancel: '取消',
         delete: '删除',
         home: '家',
         logout: '登出',
-        ok: '好的',
-        save: '救',
+        ok: '行',
+        save: '保存',
         search: '搜索',
         submit: '提交',
         addNew: '添新',
@@ -1004,7 +1004,7 @@ class AppLocalizations {
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
         error: '请输入生日',
-        title: '出生日期',
+        title: '生日',
       ),
       contacts: AppLocalizations_Labels_Contacts(
         newContact: '新联系人',
@@ -1015,8 +1015,8 @@ class AppLocalizations {
       ),
       gender: AppLocalizations_Labels_Gender(
         error: '请选择性别',
-        female: '女性',
-        male: '男性',
+        female: '女',
+        male: '男',
         title: '性别出生',
       ),
       general: AppLocalizations_Labels_General(
@@ -1028,7 +1028,7 @@ class AppLocalizations {
       ),
       medical: AppLocalizations_Labels_Medical(
         deworming: '驱虫',
-        growth: '生长',
+        growth: '发展',
         immunization: '免疫接种',
         immunizations: '预防接种',
         summaryReport: '总结报告',
@@ -1042,19 +1042,19 @@ class AppLocalizations {
           noPrevious: '没有这种类型的疫苗以前给出',
           sureDelete: '你确定要删除这个免疫接种？',
           title: '疫苗',
-          due: '到期的',
-          completed: '完全的',
+          due: '应有',
+          completed: '已完成',
         ),
       ),
       name: AppLocalizations_Labels_Name(
         familyName: '家庭/姓氏',
         familyNameError: '输入姓氏',
-        firstName: '名',
+        firstName: '名字',
         givenNameError: '输入赐名',
         givenNames: '首先/赐名',
         lastName: '姓',
         otherNames: '其他名称',
-        title: '姓名',
+        title: '名称',
       ),
       pages: AppLocalizations_Labels_Pages(
         allPatients: '所有患者',
@@ -1066,7 +1066,7 @@ class AppLocalizations {
         summaryReport: '总结报告',
       ),
       patient: AppLocalizations_Labels_Patient(
-        title: '病人',
+        title: '患者',
       ),
       registration: AppLocalizations_Labels_Registration(
         completed: '患者successfuly保存。请输入自己的人脉。',
@@ -1074,24 +1074,24 @@ class AppLocalizations {
       ),
       relationships: AppLocalizations_Labels_Relationships(
         aunt: '姨',
-        brother: '兄弟',
+        brother: '哥哥',
         daughter: '女儿',
         error: '请选择关系',
         father: '父亲',
         grandfather: '祖父',
         grandmother: '祖母',
         mother: '母亲',
-        nephew: '侄子',
+        nephew: '外甥',
         niece: '侄女',
         other: '其他',
         relation: '关系',
-        sister: '姐姐',
+        sister: '妹妹',
         son: '儿子',
         title: '关系',
         uncle: '叔叔',
       ),
       settings: AppLocalizations_Labels_Settings(
-        dark: '黑暗的',
+        dark: '黑暗',
         language: '语言',
         light: '光',
         system: '系统',
@@ -1101,14 +1101,14 @@ class AppLocalizations {
     ),
     Locale.fromSubtags(languageCode: 'zh_TW'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
-        add: '添加',
-        back: '後退',
+        add: '加',
+        back: '背部',
         cancel: '取消',
         delete: '刪除',
         home: '家',
         logout: '登出',
-        ok: '好的',
-        save: '救',
+        ok: '行',
+        save: '保存',
         search: '搜索',
         submit: '提交',
         addNew: '添新',
@@ -1139,7 +1139,7 @@ class AppLocalizations {
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
         error: '請輸入生日',
-        title: '出生日期',
+        title: '生日',
       ),
       contacts: AppLocalizations_Labels_Contacts(
         newContact: '新聯繫人',
@@ -1150,8 +1150,8 @@ class AppLocalizations {
       ),
       gender: AppLocalizations_Labels_Gender(
         error: '請選擇性別',
-        female: '女性',
-        male: '男性',
+        female: '女',
+        male: '男',
         title: '性別出生',
       ),
       general: AppLocalizations_Labels_General(
@@ -1163,7 +1163,7 @@ class AppLocalizations {
       ),
       medical: AppLocalizations_Labels_Medical(
         deworming: '驅蟲',
-        growth: '生長',
+        growth: '發展',
         immunization: '免疫接種',
         immunizations: '預防接種',
         summaryReport: '總結報告',
@@ -1177,19 +1177,19 @@ class AppLocalizations {
           noPrevious: '沒有這種類型的疫苗以前給出',
           sureDelete: '你確定要刪除這個免疫接種？',
           title: '疫苗',
-          due: '到期的',
-          completed: '完全的',
+          due: '應有',
+          completed: '已完成',
         ),
       ),
       name: AppLocalizations_Labels_Name(
         familyName: '家庭/姓氏',
         familyNameError: '輸入姓氏',
-        firstName: '名',
+        firstName: '名字',
         givenNameError: '輸入賜名',
         givenNames: '首先/賜名',
         lastName: '姓',
         otherNames: '其他名稱',
-        title: '姓名',
+        title: '名稱',
       ),
       pages: AppLocalizations_Labels_Pages(
         allPatients: '所有患者',
@@ -1201,7 +1201,7 @@ class AppLocalizations {
         summaryReport: '總結報告',
       ),
       patient: AppLocalizations_Labels_Patient(
-        title: '病人',
+        title: '患者',
       ),
       registration: AppLocalizations_Labels_Registration(
         completed: '患者successfuly保存。請輸入自己的人脈。',
@@ -1209,24 +1209,24 @@ class AppLocalizations {
       ),
       relationships: AppLocalizations_Labels_Relationships(
         aunt: '姨',
-        brother: '兄弟',
+        brother: '哥哥',
         daughter: '女兒',
         error: '請選擇關係',
         father: '父親',
         grandfather: '祖父',
         grandmother: '祖母',
         mother: '母親',
-        nephew: '侄子',
+        nephew: '外甥',
         niece: '侄女',
         other: '其他',
         relation: '關係',
-        sister: '姐姐',
+        sister: '妹妹',
         son: '兒子',
         title: '關係',
         uncle: '叔叔',
       ),
       settings: AppLocalizations_Labels_Settings(
-        dark: '黑暗的',
+        dark: '黑暗',
         language: '語言',
         light: '光',
         system: '系統',
@@ -1350,7 +1350,7 @@ class AppLocalizations {
         daughter: 'فرزند دختر',
         error: 'لطفا ارتباط را انتخاب کنید',
         father: 'پدر',
-        grandfather: 'پدر بزرگ',
+        grandfather: 'بابا بزرگ',
         grandmother: 'مادر بزرگ',
         mother: 'مادر',
         nephew: 'پسر خواهر یا برادر',
@@ -1360,7 +1360,7 @@ class AppLocalizations {
         sister: 'خواهر',
         son: 'فرزند پسر',
         title: 'ارتباط',
-        uncle: 'عمو یا دایی',
+        uncle: 'دایی',
       ),
       settings: AppLocalizations_Labels_Settings(
         dark: 'تاریک',
@@ -1374,21 +1374,21 @@ class AppLocalizations {
     Locale.fromSubtags(languageCode: 'fr'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
         add: 'Ajouter',
-        back: 'Retour',
+        back: 'Arrière',
         cancel: 'Annuler',
         delete: 'Effacer',
-        home: 'Maison',
+        home: 'Accueil',
         logout: 'Se déconnecter',
-        ok: 'd\'accord',
-        save: 'Sauvegarder',
+        ok: 'D\'accord',
+        save: 'sauver',
         search: 'Chercher',
-        submit: 'Nous faire parvenir',
+        submit: 'Soumettre',
         addNew: 'Ajouter un nouveau',
       ),
       address: AppLocalizations_Labels_Address(
         neighborhood: AppLocalizations_Labels_Address_Neighborhood(
           error: 'S\'il vous plaît sélectionner quartier',
-          title: 'Quartier',
+          title: 'quartier',
         ),
       ),
       age: AppLocalizations_Labels_Age(
@@ -1405,7 +1405,7 @@ class AppLocalizations {
         ),
       ),
       auth: AppLocalizations_Labels_Auth(
-        login: 'Connexion',
+        login: 'S\'identifier',
         password: 'Mot de passe',
         userName: 'Nom d\'utilisateur',
       ),
@@ -1423,7 +1423,7 @@ class AppLocalizations {
       gender: AppLocalizations_Labels_Gender(
         error: 'S\'il vous plaît sélectionner le genre',
         female: 'Femme',
-        male: 'Homme',
+        male: 'Masculin',
         title: 'Sexe à la naissance',
       ),
       general: AppLocalizations_Labels_General(
@@ -1449,8 +1449,8 @@ class AppLocalizations {
           noPrevious: 'Aucun vaccin précédent de ce type donné',
           sureDelete: 'Etes-vous sûr de vouloir supprimer cette vaccination?',
           title: 'Vaccins',
-          due: 'Payable',
-          completed: 'Complété',
+          due: 'Dû',
+          completed: 'Terminé',
         ),
       ),
       name: AppLocalizations_Labels_Name(
@@ -1466,7 +1466,7 @@ class AppLocalizations {
       pages: AppLocalizations_Labels_Pages(
         allPatients: 'tous les patients',
         contacts: 'Contacts',
-        login: 'Connexion',
+        login: 'S\'identifier',
         newPatient: 'nouveau patient',
         patientHome: 'Accueil des patients',
         patientInformation: 'L\'information des patients',
@@ -1483,7 +1483,7 @@ class AppLocalizations {
       relationships: AppLocalizations_Labels_Relationships(
         aunt: 'Tante',
         brother: 'Frère',
-        daughter: 'La fille',
+        daughter: 'Fille',
         error: 'S\'il vous plaît choisir relation',
         father: 'Père',
         grandfather: 'Grand-père',
@@ -1504,7 +1504,7 @@ class AppLocalizations {
         light: 'Lumière',
         system: 'Système',
         theme: 'Thème',
-        title: 'Réglages',
+        title: 'Paramètres',
       ),
     ),
     Locale.fromSubtags(languageCode: 'de'): AppLocalizations_Labels(
@@ -1516,7 +1516,7 @@ class AppLocalizations {
         home: 'Zuhause',
         logout: 'Ausloggen',
         ok: 'OK',
-        save: 'speichern',
+        save: 'sparen',
         search: 'Suche',
         submit: 'einreichen',
         addNew: 'Neue hinzufügen',
@@ -1532,7 +1532,7 @@ class AppLocalizations {
       ),
       app: AppLocalizations_Labels_App(
         chooseLanguage: 'Sprache wählen',
-        chooseTheme: 'Thema wählen',
+        chooseTheme: 'Wähle das Thema',
         settings: 'App Einstellungen',
         system: 'System',
         title: AppLocalizations_Labels_App_Title(
@@ -1574,7 +1574,7 @@ class AppLocalizations {
         growth: 'Wachstum',
         immunization: 'Immunisierung',
         immunizations: 'Immunisierungen',
-        summaryReport: 'Kurzbericht',
+        summaryReport: 'Zusammenfassender Bericht',
         vaccine: 'Impfstoff',
         vaccines: AppLocalizations_Labels_Medical_Vaccines(
           addDate: 'Erfassungsdatum des Impfstoffes:',
@@ -1595,7 +1595,7 @@ class AppLocalizations {
         firstName: 'Vorname',
         givenNameError: 'Geben Sie Vornamen',
         givenNames: 'Erste / Vorname',
-        lastName: 'Nachname',
+        lastName: 'Familienname, Nachname',
         otherNames: 'Andere Namen',
         title: 'Name',
       ),
@@ -1606,7 +1606,7 @@ class AppLocalizations {
         newPatient: 'Neuer Patient',
         patientHome: 'Patient nach Hause',
         patientInformation: 'Informationen zum Patienten',
-        summaryReport: 'Kurzbericht',
+        summaryReport: 'Zusammenfassender Bericht',
       ),
       patient: AppLocalizations_Labels_Patient(
         title: 'Geduldig',
@@ -1818,7 +1818,7 @@ class AppLocalizations {
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
         error: '誕生日を入力してください。',
-        title: '誕生日',
+        title: '生年月日',
       ),
       contacts: AppLocalizations_Labels_Contacts(
         newContact: '新しい連絡先',
@@ -1856,7 +1856,7 @@ class AppLocalizations {
           noPrevious: '与えられたこのタイプの以前のワクチンありません',
           sureDelete: 'あなたはこの予防接種を削除してもよろしいですか？',
           title: 'ワクチン',
-          due: '原因',
+          due: 'ため',
           completed: '完成しました',
         ),
       ),
@@ -2595,14 +2595,14 @@ class AppLocalizations {
     Locale.fromSubtags(languageCode: 'pt'): AppLocalizations_Labels(
       actions: AppLocalizations_Labels_Actions(
         add: 'Adicionar',
-        back: 'Voltar',
+        back: 'Costas',
         cancel: 'Cancelar',
         delete: 'Excluir',
         home: 'Casa',
         logout: 'Sair',
-        ok: 'OK',
+        ok: 'Está bem',
         save: 'Salve ',
-        search: 'Procurar',
+        search: 'Pesquisa',
         submit: 'Enviar',
         addNew: 'Adicionar novo',
       ),
@@ -2613,7 +2613,7 @@ class AppLocalizations {
         ),
       ),
       age: AppLocalizations_Labels_Age(
-        title: 'Idade',
+        title: 'Era',
       ),
       app: AppLocalizations_Labels_App(
         chooseLanguage: 'Escolha o seu idioma',
@@ -2628,7 +2628,7 @@ class AppLocalizations {
       auth: AppLocalizations_Labels_Auth(
         login: 'Conecte-se',
         password: 'Senha',
-        userName: 'Nome de usuário',
+        userName: 'Nome do usuário',
       ),
       birthDate: AppLocalizations_Labels_BirthDate(
         error: 'Por favor, indique data de nascimento',
@@ -2651,8 +2651,8 @@ class AppLocalizations {
         completeError: 'Por favor, preencha todos os campos obrigatórios.',
       ),
       language: AppLocalizations_Labels_Language(
-        inEnglish: 'inglês',
-        title: 'inglês',
+        inEnglish: 'Inglês',
+        title: 'Inglês',
       ),
       medical: AppLocalizations_Labels_Medical(
         deworming: 'desparasitação',
@@ -2670,7 +2670,7 @@ class AppLocalizations {
           noPrevious: 'Não há vacinas anteriores deste tipo de dado',
           sureDelete: 'Tem certeza de que deseja excluir esta imunização?',
           title: 'Vacinas',
-          due: 'Devido',
+          due: 'Vencimento',
           completed: 'concluído',
         ),
       ),
@@ -2680,7 +2680,7 @@ class AppLocalizations {
         firstName: 'Primeiro nome',
         givenNameError: 'Digite nomes dados',
         givenNames: 'Primeiro / Nomes',
-        lastName: 'Sobrenome',
+        lastName: 'Último nome',
         otherNames: 'Outros nomes',
         title: 'Nome',
       ),
@@ -2707,12 +2707,12 @@ class AppLocalizations {
         daughter: 'Filha',
         error: 'Por favor seleccione relacionamento',
         father: 'Pai',
-        grandfather: 'Vô',
+        grandfather: 'Avô',
         grandmother: 'Avó',
         mother: 'Mãe',
         nephew: 'Sobrinho',
         niece: 'Sobrinha',
-        other: 'Outro',
+        other: 'De outros',
         relation: 'Relação',
         sister: 'Irmã',
         son: 'Filho',
@@ -2720,12 +2720,12 @@ class AppLocalizations {
         uncle: 'Tio',
       ),
       settings: AppLocalizations_Labels_Settings(
-        dark: 'Escuro',
+        dark: 'Sombrio',
         language: 'Língua',
-        light: 'Claro',
+        light: 'Luz',
         system: 'Sistema',
         theme: 'Tema',
-        title: 'Configurações',
+        title: 'Definições',
       ),
     ),
     Locale.fromSubtags(languageCode: 'pa'): AppLocalizations_Labels(

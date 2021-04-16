@@ -13,10 +13,10 @@ Future showMyDatePicker(
         lastDate: DateTime(2999, 12, 31),
         builder: (BuildContext context, child) {
           return Theme(
-            data: Get.theme!.copyWith(
-              colorScheme: Get.theme!.colorScheme.copyWith(
-                  primary: Get.theme!.colorScheme.onPrimary,
-                  onPrimary: Get.theme!.colorScheme.primary),
+            data: Get.theme.copyWith(
+              colorScheme: Get.theme.colorScheme.copyWith(
+                  primary: Get.theme.colorScheme.onPrimary,
+                  onPrimary: Get.theme.colorScheme.primary),
             ),
             child: child ?? Container(),
           );

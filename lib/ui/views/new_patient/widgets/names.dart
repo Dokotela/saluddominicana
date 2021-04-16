@@ -30,14 +30,13 @@ class NamesInputWidget extends StatelessWidget {
             decoration: InputDecoration(
               labelText: labels.name.familyName,
               labelStyle:
-                  Get.textTheme!.bodyText1!.copyWith(fontSize: Get.width * .05),
+                  Get.textTheme.bodyText1!.copyWith(fontSize: Get.width * .05),
               errorText: familyNameError == '' ? null : familyNameError,
               focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Get.theme!.colorScheme.onPrimary),
+                borderSide: BorderSide(color: Get.theme.colorScheme.onPrimary),
               ),
             ),
-            style:
-                Get.textTheme!.headline6!.copyWith(fontSize: Get.width * .05),
+            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width * .05),
           ),
 
           /// error is blank at first, only is shown after the registration
@@ -47,14 +46,13 @@ class NamesInputWidget extends StatelessWidget {
             decoration: InputDecoration(
               labelText: labels.name.givenNames,
               labelStyle:
-                  Get.textTheme!.bodyText1!.copyWith(fontSize: Get.width * .05),
+                  Get.textTheme.bodyText1!.copyWith(fontSize: Get.width * .05),
               errorText: givenNameError == '' ? null : givenNameError,
               focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Get.theme!.colorScheme.onPrimary),
+                borderSide: BorderSide(color: Get.theme.colorScheme.onPrimary),
               ),
             ),
-            style:
-                Get.textTheme!.headline6!.copyWith(fontSize: Get.width * .05),
+            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width * .05),
           ),
         ],
       ),
