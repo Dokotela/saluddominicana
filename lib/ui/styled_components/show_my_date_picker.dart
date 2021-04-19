@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 Future showMyDatePicker(
         {required DateTime initialDate,
         required Function function,
-        int? index}) =>
+        int? index,
+        List? arguments}) =>
     showDatePicker(
         context: Get.context!,
         locale: Get.locale,
@@ -21,5 +22,11 @@ Future showMyDatePicker(
             child: child ?? Container(),
           );
         }).then(
-      (date) => index == null ? function(date) : function(index, date),
+      (date) => index == null
+          ? arguments == null
+              ? function(date)
+              : function(date, arguments)
+          : arguments == null
+              ? function(index, date)
+              : function(index, date, arguments),
     );

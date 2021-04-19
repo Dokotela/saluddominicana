@@ -1,3 +1,4 @@
+import 'package:fhir/r4.dart';
 import 'package:get/get.dart';
 // import 'package:vigor/ui/views/patient_home/patient_imm/vax_dates_dialog.dart';
 
@@ -23,6 +24,11 @@ class PatientHomeController extends GetxController {
   String birthDate() => _patient.value.birthDate();
   String relativeAge() => sharedRelativeAge(_patient.value.birthDate());
   PatientModel actualPatient() => _patient.value;
+  PatientContact? primaryContact() => _patient.value.patient.contact == null
+      ? null
+      : _patient.value.patient.contact!.isEmpty
+          ? null
+          : _patient.value.patient.contact![0];
 
   /// SETTER FUNCTIONS
 

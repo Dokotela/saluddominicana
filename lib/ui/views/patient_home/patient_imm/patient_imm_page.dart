@@ -27,6 +27,19 @@ class PatientImmPage extends StatelessWidget {
         ),
       );
 
+  DataCell doseCell(String dz, int val, SizingInformation sizingInformation) =>
+      DataCell(TextButton(
+        child: doseOptions(controller.display(dz, val), sizingInformation),
+        onPressed: () => showMyDatePicker(
+          initialDate: controller.display(dz, val).fold(
+                (l) => DateTime.now(),
+                (r) => DateTime.parse(r),
+              ),
+          function: controller.addNew,
+          arguments: [dz],
+        ),
+      ));
+
   DataRow _getRow(String text, String dz, BuildContext context,
       SizingInformation sizingInformation) {
     controller.agNotDue();
@@ -51,14 +64,13 @@ class PatientImmPage extends StatelessWidget {
             ),
           ),
         ),
-        DataCell(doseOptions(controller.display(dz, 0), sizingInformation)),
-        DataCell(doseOptions(controller.display(dz, 1), sizingInformation)),
-        DataCell(doseOptions(controller.display(dz, 2), sizingInformation)),
-        DataCell(doseOptions(controller.display(dz, 3), sizingInformation)),
-        DataCell(doseOptions(controller.display(dz, 4), sizingInformation)),
-        DataCell(doseOptions(controller.display(dz, 5), sizingInformation)),
+        doseCell(dz, 0, sizingInformation),
+        doseCell(dz, 1, sizingInformation),
+        doseCell(dz, 2, sizingInformation),
+        doseCell(dz, 3, sizingInformation),
+        doseCell(dz, 4, sizingInformation),
+        doseCell(dz, 5, sizingInformation),
       ],
-      onSelectChanged: (value) => controller.editDates(text, dz),
     );
   }
 
@@ -94,7 +106,7 @@ class PatientImmPage extends StatelessWidget {
                                     horizontalMargin: 6,
                                     columnSpacing: 2,
                                     dividerThickness: 2,
-                                    dataRowHeight: Get.height * .055,
+                                    dataRowHeight: Get.height * .075,
                                     showBottomBorder: true,
                                     columns: [
                                       DataColumn(

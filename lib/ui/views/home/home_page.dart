@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:saluddominicana/controllers/controllers.dart';
 import 'package:saluddominicana/services/fhir_server.dart';
 
 import '../../../routes/routes.dart';

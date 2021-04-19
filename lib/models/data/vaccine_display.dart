@@ -76,7 +76,7 @@ class VaccineDisplay {
                 displayVaxDates[name]!.first.occurrenceDateTime?.toJson()) ==
             VaxDate.fromString(VaxDate.now().toString())) {
           displayVaxDates[name]!.remove(displayVaxDates[name]!.first);
-          return left(DoseDisplay.completedToday);
+          return right(VaxDate.now().toIso8601String());
         } else {
           final date =
               displayVaxDates[name]!.first.occurrenceDateTime.toString();

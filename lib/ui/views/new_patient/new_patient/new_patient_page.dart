@@ -12,8 +12,8 @@ import '../widgets/names.dart';
 class NewPatientPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NewPatientController());
     final labels = AppLocalizations.of(context)!;
+    final controller = Get.put(NewPatientController());
 
     return GestureDetector(
       onTap: () {

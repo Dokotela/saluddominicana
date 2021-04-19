@@ -1,6 +1,8 @@
+import 'package:fhir/r4/resource_types/base/individuals/individuals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:saluddominicana/_internal/utils/utils.dart';
 
 import '../localization.dart';
 
@@ -11,6 +13,7 @@ class InfoBannerWidget extends StatelessWidget {
     required this.birthDate,
     required this.relativeAge,
     required this.sex,
+    required this.primaryContact,
   });
 
   final String name;
@@ -18,6 +21,7 @@ class InfoBannerWidget extends StatelessWidget {
   final String birthDate;
   final String relativeAge;
   final String sex;
+  final PatientContact? primaryContact;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +56,20 @@ class InfoBannerWidget extends StatelessWidget {
           _spacerV,
           Text(
             'ID: $id',
+            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
+          ),
+          Text(
+            primaryContact?.relationship == null
+                ? 'N/A'
+                : 'Contacto Primario: ${primaryContact?.relationship?[0].coding?[0].display}',
+            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
+          ),
+          Text(
+            primaryContact?.relationship == null
+                ? 'N/A'
+                : 'Nombre de Contacto: ${lastCommaGivenName(primaryContact?.name == null ? null : [
+                    primaryContact!.name!
+                  ])}',
             style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
           ),
         ],

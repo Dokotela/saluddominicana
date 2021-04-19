@@ -29,7 +29,6 @@ class NewPatientController extends GetxController {
 
   final _gender = ''.obs;
   final _genderError = ''.obs;
-  final _genderTypes = genderList();
 
   final _barrio = ''.obs;
   final _barrioError = ''.obs;
@@ -66,7 +65,7 @@ class NewPatientController extends GetxController {
   String get displayBirthDate => _birthDateString.value;
   String get birthDateError => _birthDateError.value;
 
-  List<String> get genderTypes => _genderTypes;
+  List<String> get genderTypes => genderList();
   String get gender => _gender.value;
   String get genderError => _genderError.value;
 
@@ -108,6 +107,7 @@ class NewPatientController extends GetxController {
   }
 
   Future<Either<DbFailure, Unit>> save() async {
+    print(gender);
     if (isValidRegistrationName(familyName.text) &&
         isValidRegistrationName(givenName.text) &&
         isValidRegistrationBirthDate(_birthDate.value) &&
@@ -127,16 +127,12 @@ class NewPatientController extends GetxController {
             ? PatientGender.female
             : PatientGender.male,
       );
-      print(_birthDate.value);
-      print(Date(_birthDate.value).isValid);
-      print(_patient.value.patient.toJson());
 
       final saveResult = await IFhirDb().save(_patient.value.patient);
       return saveResult.fold(
         (l) => left(l),
         (r) {
           _patient.value.patient = r as Patient;
-          print(r.toJson());
           return right(unit);
         },
       );

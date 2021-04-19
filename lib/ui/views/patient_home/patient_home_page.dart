@@ -37,6 +37,7 @@ class PatientHomePage extends StatelessWidget {
                   birthDate: controller.birthDate(),
                   relativeAge: controller.relativeAge(),
                   sex: controller.sex(),
+                  primaryContact: controller.primaryContact(),
                 ),
               ],
             ),
