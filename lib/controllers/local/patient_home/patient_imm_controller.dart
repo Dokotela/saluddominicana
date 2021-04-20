@@ -66,9 +66,9 @@ class PatientImmController extends GetxController {
 
   /// EVENTS
   Future addNew(DateTime? date, List? dz) async {
-    if (date == null || dz == null) {
+    if (date != null && dz != null) {
       await _patient.value
-          .addNewVaccine(drVaxCvxMap[dz![0]]!, FhirDateTime(date!));
+          .addNewVaccine(drVaxCvxMap[dz[0]]!, FhirDateTime(date));
       setDisplay();
       update();
     }
@@ -88,9 +88,6 @@ class PatientImmController extends GetxController {
 
   void editPatient() =>
       Get.toNamed(AppRoutes.NEW_PATIENT, arguments: _patient.value);
-
-  void editDates(String text, String dz) =>
-      Get.toNamed(AppRoutes.VAX_DATES, arguments: [text, dz]);
 
   // void recordNew(DateTime newDate, String dz) =>
   //     _fullVaxDates[dz].add(FhirDateTime(newDate));

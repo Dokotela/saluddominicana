@@ -27,37 +27,44 @@ class FhirServer {
 
   Future uploadAllResources() async {
     final allResources = await ResourceDao().getAll(null);
-    // final resourceBundle = Bundle(
-    //   type: BundleType.batch,
-    //   entry: [],
-    // );
-    // for (final resource in allResources) {
-    //   resourceBundle.entry!.add(
-    //     BundleEntry(
-    //       resource: resource,
-    //       request: BundleRequest(
-    //         method: BundleRequestMethod.post,
-    //         url: FhirUri(resource.resourceTypeString()),
-    //       ),
-    //     ),
-    //   );
-    // }
-    //
-    // print(allResources[0].toYaml());
-    // final birth = DateTime.now();
-    // final date = Date(birth);
-    // print(date.isValid);
-    print((allResources[0] as Patient).birthDate);
-    print((allResources[0] as Patient).birthDate?.value.runtimeType);
-    // print((allResources[0] as Patient).birthDate?.isValid);
-    final newPatient = (allResources[0] as Patient).copyWith(
-        birthDate: Date(
-            '${1900 + random(120)}-0${random(8) + 1}-${(random(27) + 1).toString().padLeft(2, '0')}'));
+    final resourceBundle = Bundle(
+      type: BundleType.transaction,
+      entry: [],
+    );
+    for (final resource in allResources) {
+      resourceBundle.entry!.add(
+        BundleEntry(
+          fullUrl: FhirUri(
+              '${_loginCommand.gcsUrl}/${resource.resourceTypeString()}/${resource.id}'),
+          resource: resource,
+          request: BundleRequest(
+            method: BundleRequestMethod.post,
+            url: FhirUri('${resource.resourceTypeString()}/${resource.id}'),
+          ),
+        ),
+      );
+    }
     final request =
-        FhirRequest.create(base: serverUrl.value!, resource: newPatient);
+        FhirRequest.transaction(base: serverUrl.value!, bundle: resourceBundle);
     final response =
         await request.request(headers: await _loginCommand.authHeaders());
-    // print(response?.toJson());
+    if (response is OperationOutcome) {
+      print(response.toJson());
+    }
+    final newRez = FhirRequest.read(
+      base: serverUrl.value!,
+      type: R4ResourceType.Patient,
+      id: Id('ca604ed7-43da-4f81-84d3-d2e31d672858'),
+    );
+    final newRes =
+        await newRez.request(headers: await _loginCommand.authHeaders());
+    print(newRes?.toJson());
+    final updateRes = (newRes as Patient).copyWith(gender: PatientGender.male);
+    final updateReq =
+        FhirRequest.update(base: serverUrl.value!, resource: updateRes);
+    final finalRes =
+        await updateReq.request(headers: await _loginCommand.authHeaders());
+    print(finalRes?.toJson());
   }
 
   int random(int numb) {

@@ -66,7 +66,7 @@ class PatientModel {
       occurrenceDateTime: date,
       vaccineCode: cvxToCoding(cvx));
 
-  Future addNewVaccine(String cvx, FhirDateTime date) async {
+  Future<void> addNewVaccine(String cvx, FhirDateTime date) async {
     final immunization = _newVax(cvx, date);
     final newImm = await IFhirDb().save(immunization);
     newImm.fold((l) => Get.snackbar('Error', l.error),
