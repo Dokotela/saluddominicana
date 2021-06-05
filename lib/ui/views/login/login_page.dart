@@ -96,7 +96,8 @@ class LoginPage extends StatelessWidget {
                   buttonText: labels.auth.login,
                   onPressed: () async {
                     // controller.emailLogin();
-                    final loggedIn = await _loginCommand.login();
+                    final loggedIn = true;
+                    //await _loginCommand.login();
                     if (loggedIn) {
                       Get.toNamed(AppRoutes.HOME);
                     }

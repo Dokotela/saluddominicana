@@ -8,6 +8,7 @@ import '../../../styled_components/app_bar.dart';
 import '../../../styled_components/bottom_navigation_bar.dart';
 import '../../../styled_components/styled_components.dart';
 import '../../../views/new_patient/widgets/names.dart';
+import '../widgets/drop_down_selection.dart';
 import 'contacts_view_controller.dart';
 
 class ContactsPage extends StatelessWidget {

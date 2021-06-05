@@ -56,20 +56,25 @@ Widget doseOptions(
       }
     },
     (r) => Container(
-      alignment: Alignment.center,
-      child: Row(
-        children: [
-          Text(
-            '${r.substring(0, 4)}\n${r.substring(5, 10)}',
-            overflow: TextOverflow.visible,
-            style: TextStyle(
-                color: r.substring(0, 10) ==
-                        DateTime.now().toString().substring(0, 10)
-                    ? Colors.red
-                    : Colors.black),
-          ),
-        ],
-      ),
-    ),
+        alignment: Alignment.center,
+        child: Icon(
+          Icons.check_box,
+          color: Colors.green,
+          size: screenSize.iconSizes(sizingInformation),
+        )
+        // child: Row(
+        //   children: [
+        //     Text(
+        //       '${r.substring(0, 4)}\n${r.substring(5, 10)}',
+        //       overflow: TextOverflow.visible,
+        //       style: TextStyle(
+        //           color: r.substring(0, 10) ==
+        //                   DateTime.now().toString().substring(0, 10)
+        //               ? Colors.red
+        //               : Colors.black),
+        //     ),
+        //   ],
+        // ),
+        ),
   );
 }

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:saluddominicana/ui/styled_components/styled_components.dart';
 
+import '../../../../controllers/controllers.dart';
 import '../../../../controllers/local/new_patient/new_patient_controller.dart';
+import '../../../../ui/styled_components/styled_components.dart';
+import '../../../../ui/views/new_patient/widgets/layout.dart';
 import '../../../localization.dart';
 import '../../../styled_components/app_bar.dart';
 import '../../../styled_components/bottom_navigation_bar.dart';
 import '../widgets/birthDate.dart';
+import '../widgets/drop_down_selection.dart';
 import '../widgets/names.dart';
 
 class NewPatientPage extends StatelessWidget {
@@ -14,6 +17,9 @@ class NewPatientPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context)!;
     final controller = Get.put(NewPatientController());
+    ResponsiveCommand screenSize = Get.find();
+    SizedBox _sizedBox(double size) =>
+        SizedBox(height: screenSize.height * size);
 
     return GestureDetector(
       onTap: () {
@@ -33,10 +39,10 @@ class NewPatientPage extends StatelessWidget {
           child: Container(
             child: Center(
               child: Container(
-                width: Get.width * .7,
+                width: Get.width * .8,
                 child: Obx(
                   () => Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       /// reusable widget for entering first and last names, is
                       /// passed 2 text controllers, and the error messages for each
@@ -69,32 +75,35 @@ class NewPatientPage extends StatelessWidget {
                         dispBirthDateError: controller.birthDateError,
                       ),
 
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Contacto Primario',
-                                style: Get.theme.textTheme.bodyText1!
-                                    .copyWith(fontSize: Get.width * .05),
-                              ),
-                              IconButton(
-                                  icon: Icon(Icons.edit),
-                                  onPressed: () => controller.editContacts()),
-                            ],
+                      Layout(
+                        [
+                          Text(
+                            'Contacto Primario',
+                            style: Get.theme.textTheme.bodyText1!
+                                .copyWith(fontSize: Get.width * .04),
                           ),
-                          Container(
-                            width: Get.width * .7,
-                            child: Text(
-                              controller.primaryFamilyMember,
-                              style: Get.theme.textTheme.bodyText1!
-                                  .copyWith(fontSize: Get.width * .05),
+                          TextButton(
+                            onPressed: () => controller.editContacts(),
+                            child: Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    controller.primaryFamilyMember,
+                                    style: Get.theme.textTheme.bodyText1!
+                                        .copyWith(fontSize: Get.width * .05),
+                                    textAlign: TextAlign.end,
+                                  ),
+                                  Icon(Icons.keyboard_arrow_down,
+                                      color: Colors.black),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
+
+                      _sizedBox(.02),
 
                       /// reusable widget for selecting neighborhood, includes the
                       /// list of neighborhoods, which one to display, the event
