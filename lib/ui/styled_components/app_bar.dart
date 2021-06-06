@@ -8,7 +8,7 @@ class VigorAppBar extends AppBar {
       : super(
           title: Text(title,
               style: Get.theme.textTheme.headline5!
-                  .copyWith(fontSize: Get.width * .07)),
+                  .copyWith(fontSize: Get.width * Get.height * .0001)),
           elevation: 1,
           leading: leading,
           automaticallyImplyLeading: false,

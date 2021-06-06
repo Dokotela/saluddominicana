@@ -24,14 +24,14 @@ class MinInfoBanner extends StatelessWidget {
           children: [
             Text(
               '${labels.name.title}: $name',
-              style:
-                  Get.textTheme.headline6!.copyWith(fontSize: Get.width / 18),
+              style: Get.textTheme.headline6!
+                  .copyWith(fontSize: Get.width * Get.height * .00007),
             ),
             SizedBox(height: 4.0),
             Text(
               '${labels.birthDate.title}: $birthDate',
-              style:
-                  Get.textTheme.headline6!.copyWith(fontSize: Get.width / 18),
+              style: Get.textTheme.headline6!
+                  .copyWith(fontSize: Get.width * Get.height * .00007),
             ),
           ],
         ),

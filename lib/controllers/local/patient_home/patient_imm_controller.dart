@@ -7,6 +7,7 @@ import '../../../_internal/constants/constants.dart';
 import '../../../models/data/patient_model.dart';
 import '../../../models/data/vaccine_display.dart';
 import '../../../routes/routes.dart';
+import '../../controllers.dart';
 
 class PatientImmController extends GetxController {
   /// PROPERTIES
@@ -14,11 +15,12 @@ class PatientImmController extends GetxController {
   final _display = VaccineDisplay().obs;
   final _isReady = false.obs;
   final _agDue = false.obs;
+  final PatientHomeController controller = Get.find();
 
   /// INIT
   @override
   Future onInit() async {
-    _patient.value = Get.arguments;
+    _patient.value = controller.actualPatient();
     _display.value.birthdate = birthDate();
     await _patient.value.loadImmunizations();
     setDisplay();

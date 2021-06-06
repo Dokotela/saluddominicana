@@ -12,7 +12,7 @@ class PatientHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context)!;
-    final PatientHomeController controller = Get.put(PatientHomeController())!;
+    final PatientHomeController controller = Get.put(PatientHomeController());
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -49,9 +49,7 @@ class PatientHomePage extends StatelessWidget {
             ),
             SizedBox(height: 40.0),
             ActionButton(
-              buttonText: labels.medical.deworming,
-              onPressed: () => null,
-            ),
+                buttonText: labels.medical.deworming, onPressed: () => null),
           ],
         ),
       ),
