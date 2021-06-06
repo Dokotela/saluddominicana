@@ -67,10 +67,15 @@ class PatientImmController extends GetxController {
   }
 
   /// EVENTS
-  Future addNew(DateTime? date, List? dz) async {
-    if (date != null && dz != null) {
-      await _patient.value
-          .addNewVaccine(drVaxCvxMap[dz[0]]!, FhirDateTime(date));
+  Future addNew(DateTime? date, List? args) async {
+    if (date != null && args != null) {
+      if (args.length > 1 && args[1]) {
+        await _patient.value
+            .editVaccine(drVaxCvxMap[args[0]]!, FhirDateTime(date));
+      } else {
+        await _patient.value
+            .addNewVaccine(drVaxCvxMap[args[0]]!, FhirDateTime(date));
+      }
       setDisplay();
       update();
     }

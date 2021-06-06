@@ -31,46 +31,54 @@ class InfoBannerWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             '${labels.name.title}: $name',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
+            style: Get.textTheme.headline6!
+                .copyWith(fontSize: Get.width * Get.height * 0.00007),
           ),
           _spacerV,
           Text(
             '${labels.birthDate.title}: $birthDate',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
+            style: Get.textTheme.headline6!
+                .copyWith(fontSize: Get.width * Get.height * 0.00007),
           ),
           _spacerV,
-          Text(
-            '${labels.age.title}: $relativeAge',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
+          // Text(
+          //   'ID: $id',
+          //   style: Get.textTheme.headline6!
+          //       .copyWith(fontSize: Get.width * Get.height * 0.00007),
+          // ),
+          // _spacerV,
+          Container(
+            width: Get.width - 16,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '${labels.age.title}: $relativeAge',
+                  style: Get.textTheme.headline6!
+                      .copyWith(fontSize: Get.width * Get.height * 0.00007),
+                ),
+                Text(
+                  '${labels.gender.title}: $sex',
+                  style: Get.textTheme.headline6!
+                      .copyWith(fontSize: Get.width * Get.height * 0.00007),
+                ),
+              ],
+            ),
           ),
           _spacerV,
-          Text(
-            '${labels.gender.title}: $sex',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
-          ),
-          _spacerV,
-          Text(
-            'ID: $id',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
-          ),
           Text(
             primaryContact?.relationship == null
-                ? 'N/A'
-                : 'Contacto Primario: ${primaryContact?.relationship?[0].coding?[0].display}',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
-          ),
-          Text(
-            primaryContact?.relationship == null
-                ? 'N/A'
-                : 'Nombre de Contacto: ${lastCommaGivenName(primaryContact?.name == null ? null : [
-                    primaryContact!.name!
-                  ])}',
-            style: Get.textTheme.headline6!.copyWith(fontSize: Get.width / 20),
+                ? 'No contacts recorded'
+                : '${primaryContact?.relationship?[0].coding?[0].display}: '
+                    '${lastCommaGivenName(primaryContact?.name == null ? null : [
+                        primaryContact!.name!
+                      ])}',
+            style: Get.textTheme.headline6!
+                .copyWith(fontSize: Get.width * Get.height * 0.00007),
           ),
         ],
       ),

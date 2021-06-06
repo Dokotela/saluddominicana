@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/local/patient_home/patient_home_controller.dart';
-import '../../../ui/styled_components/action_button.dart';
 import '../../../ui/styled_components/app_bar.dart';
 import '../../../ui/styled_components/bottom_navigation_bar.dart';
 import '../../../ui/styled_components/info_banner.dart';
 import '../../localization.dart';
+import '../views.dart';
 
 class PatientHomePage extends StatelessWidget {
   @override
@@ -19,38 +19,20 @@ class PatientHomePage extends StatelessWidget {
       appBar: VigorAppBar(title: labels.pages.patientHome),
       body: Container(
         constraints: const BoxConstraints.expand(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.edit,
-                      color: Get.theme.colorScheme.onBackground),
-                  onPressed: () => controller.editPatient(),
-                ),
-                InfoBannerWidget(
-                  name: controller.name(),
-                  id: controller.id(),
-                  birthDate: controller.birthDate(),
-                  relativeAge: controller.relativeAge(),
-                  sex: controller.sex(),
-                  primaryContact: controller.primaryContact(),
-                ),
-              ],
-            ),
-            Divider(color: Get.theme.colorScheme.primary, thickness: 2.0),
-            SizedBox(height: 40.0),
-            ActionButton(
-              buttonText: labels.medical.immunizations,
-              onPressed: () => controller.immPage(),
-            ),
-            SizedBox(height: 40.0),
-            ActionButton(
-                buttonText: labels.medical.deworming, onPressed: () => null),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              InfoBannerWidget(
+                name: controller.name(),
+                id: controller.id(),
+                birthDate: controller.birthDate(),
+                relativeAge: controller.relativeAge(),
+                sex: controller.sex(),
+                primaryContact: controller.primaryContact(),
+              ),
+              PatientImmPage(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: bottomAppBar(),

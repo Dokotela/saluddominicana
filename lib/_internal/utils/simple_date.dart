@@ -5,8 +5,9 @@ String dateFromFhirDate(Date? date) =>
 
 String yyMMddFromFhirDate(Date date) => dateFromFhirDate(date).substring(2, 10);
 
-String dateFromFhirDateTime(FhirDateTime date) =>
-    date.toString().substring(0, 10);
+String dateFromFhirDateTime(FhirDateTime? date) => date == null
+    ? DateTime.now().toString().substring(0, 10)
+    : date.toString().substring(0, 10);
 
 String dateFromDateTime(DateTime date) => date.toString().substring(0, 10);
 

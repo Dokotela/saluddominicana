@@ -40,8 +40,9 @@ class PatientModel {
   late Map<String, Set<Immunization>> immHx;
 
   Future loadImmunizations() async {
-    final iFhirDb = IFhirDb();
-    await iFhirDb.returnPatientImmunizationHistory(patient.id.toString()).then(
+    await IFhirDb()
+        .returnPatientImmunizationHistory(patient.id.toString())
+        .then(
       (result) {
         result.fold(
           (l) => Get.snackbar('Error', '${l.error}'),
@@ -72,6 +73,43 @@ class PatientModel {
     newImm.fold((l) => Get.snackbar('Error', l.error),
         (r) => pastImmunizations.add(r as Immunization));
     immHx = IDrVaxCast.drVaxCast(immunizations: pastImmunizations);
+  }
+
+  Future<void> editVaccine(String cvx, FhirDateTime date) async {
+    await IFhirDb()
+        .returnPatientImmunizationHistory(patient.id.toString())
+        .then(
+      (result) {
+        result.fold(
+          (l) => Get.snackbar('Error', '${l.error}'),
+          (r) => r.forEach(
+            (resource) async {
+              print(resource.toJson());
+              if ((resource as Immunization).status == Code('completed') &&
+                  dateFromFhirDateTime(resource.occurrenceDateTime) ==
+                      dateFromFhirDateTime(date)) {
+                var cvxIndex = resource.vaccineCode.coding?.indexWhere(
+                    (element) =>
+                        element.system ==
+                        FhirUri('http://hl7.org/fhir/sid/cvx'));
+                if (cvxIndex != null &&
+                    cvxIndex != -1 &&
+                    resource.vaccineCode.coding![cvxIndex].code.toString() ==
+                        cvx) {
+                  final immunization =
+                      resource.copyWith(occurrenceDateTime: date);
+                  final newImm = await IFhirDb().save(immunization);
+                  newImm.fold((l) => Get.snackbar('Error', l.error),
+                      (r) => pastImmunizations.add(r as Immunization));
+                  immHx =
+                      IDrVaxCast.drVaxCast(immunizations: pastImmunizations);
+                }
+              }
+            },
+          ),
+        );
+      },
+    );
   }
 
   Future deleteVaccine(Immunization vax) async {
