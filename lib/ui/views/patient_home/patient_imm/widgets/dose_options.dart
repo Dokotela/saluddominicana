@@ -29,7 +29,7 @@ Widget doseOptions(String dz, int val) {
               (r) => DateTime.parse(r),
             ),
         function: controller.addNew,
-        arguments: [dz, date != null && date != ''],
+        arguments: [dz, date != null && date != '', date],
       ),
     );
   }

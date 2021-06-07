@@ -75,7 +75,8 @@ class PatientModel {
     immHx = IDrVaxCast.drVaxCast(immunizations: pastImmunizations);
   }
 
-  Future<void> editVaccine(String cvx, FhirDateTime date) async {
+  Future<void> editVaccine(
+      String cvx, FhirDateTime date, FhirDateTime oldDate) async {
     await IFhirDb()
         .returnPatientImmunizationHistory(patient.id.toString())
         .then(
@@ -84,10 +85,9 @@ class PatientModel {
           (l) => Get.snackbar('Error', '${l.error}'),
           (r) => r.forEach(
             (resource) async {
-              print(resource.toJson());
               if ((resource as Immunization).status == Code('completed') &&
                   dateFromFhirDateTime(resource.occurrenceDateTime) ==
-                      dateFromFhirDateTime(date)) {
+                      dateFromFhirDateTime(oldDate)) {
                 var cvxIndex = resource.vaccineCode.coding?.indexWhere(
                     (element) =>
                         element.system ==
@@ -99,8 +99,14 @@ class PatientModel {
                   final immunization =
                       resource.copyWith(occurrenceDateTime: date);
                   final newImm = await IFhirDb().save(immunization);
-                  newImm.fold((l) => Get.snackbar('Error', l.error),
-                      (r) => pastImmunizations.add(r as Immunization));
+                  newImm.fold(
+                    (l) => Get.snackbar('Error', l.error),
+                    (r) {
+                      pastImmunizations
+                          .removeWhere((element) => element.id == r.id);
+                      pastImmunizations.add(r as Immunization);
+                    },
+                  );
                   immHx =
                       IDrVaxCast.drVaxCast(immunizations: pastImmunizations);
                 }

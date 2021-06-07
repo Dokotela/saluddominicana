@@ -48,23 +48,7 @@ class FhirServer {
         FhirRequest.transaction(base: serverUrl.value!, bundle: resourceBundle);
     final response =
         await request.request(headers: await _loginCommand.authHeaders());
-    if (response is OperationOutcome) {
-      print(response.toJson());
-    }
-    final newRez = FhirRequest.read(
-      base: serverUrl.value!,
-      type: R4ResourceType.Patient,
-      id: Id('ca604ed7-43da-4f81-84d3-d2e31d672858'),
-    );
-    final newRes =
-        await newRez.request(headers: await _loginCommand.authHeaders());
-    print(newRes?.toJson());
-    final updateRes = (newRes as Patient).copyWith(gender: PatientGender.male);
-    final updateReq =
-        FhirRequest.update(base: serverUrl.value!, resource: updateRes);
-    final finalRes =
-        await updateReq.request(headers: await _loginCommand.authHeaders());
-    print(finalRes?.toJson());
+    print(response?.toJson());
   }
 
   int random(int numb) {
